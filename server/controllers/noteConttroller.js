@@ -13,7 +13,7 @@ getNotes = async (req, res) => {
             return res.status(400).json({success: false, error: err});
         }
         if (!notes.length) {
-            return res.status(400).json({success: false, error: 'No note found'});
+            return res.status(200).json({notes: notesList});
         }
         return res.status(200).json({success: true, data: notes});
     }).clone().catch(function(err){ console.log(err) });
@@ -61,5 +61,5 @@ module.exports = {
     postNote,
     getNoteById,
     putNoteById,
-    deleteNoteById
+    deleteNoteById,
 };
