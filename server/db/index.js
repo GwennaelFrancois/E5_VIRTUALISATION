@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'localhost:27017/note';
+const connectionString = 'mongodb+srv://note_user:lKtEe2hL2NiONPJa@cluster0.vkanv.mongodb.net/notes?retryWrites=true&w=majority';
 
 mongoose.connect(connectionString, {useNewUrlParser: true}).catch((e) => {
     console.error('Connection error', e.message);

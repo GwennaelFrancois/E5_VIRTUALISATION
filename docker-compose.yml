@@ -19,24 +19,9 @@ services:
     image: server-app
     ports:
       - "5000:5000"
-    depends_on:
-      - mongo
     networks:
       - app-network
   
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    networks:
-      - app-network
-    volumes:
-      - db-data:/data/db
-
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  db-data:
-    driver: local
